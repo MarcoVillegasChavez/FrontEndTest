@@ -11,10 +11,10 @@ export class ChatListComponent implements OnInit {
   constructor(private chatService: ChatsService) { }
   chats:any = [];
   ngOnInit() {
-    this.getChats
+    this.getChats();
   }
   getChats(){
-    this.chatService.getChats().subscribe(
+      this.chatService.getChats().subscribe(
       res =>{
         this.chats = res;
       },

@@ -22,7 +22,7 @@ const routes: Routes = [
   },
   {
     path:'ChatRoom',
-    component: ChatListComponent
+    component: ChatRoomComponent
   },
   {
     path:'ChatRoom/add',
