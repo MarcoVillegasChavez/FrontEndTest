@@ -9,14 +9,18 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { GameFormComponent } from './components/game-form/game-form.component';
 import { GameListComponent } from './components/game-list/game-list.component';
 
-import { GamesService } from './services/games.service'
+import { GamesService } from './services/games.service';
+import { ChatListComponent } from './components/chat-list/chat-list.component';
+import { ChatRoomComponent } from './components/chat-room/chat-room.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
     GameFormComponent,
-    GameListComponent
+    GameListComponent,
+    ChatListComponent,
+    ChatRoomComponent
   ],
   imports: [
     BrowserModule,
