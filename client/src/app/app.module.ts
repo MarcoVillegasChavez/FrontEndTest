@@ -11,7 +11,8 @@ import { GameListComponent } from './components/game-list/game-list.component';
 
 import { GamesService } from './services/games.service';
 import { ChatListComponent } from './components/chat-list/chat-list.component';
-import { ChatRoomComponent } from './components/chat-room/chat-room.component'
+import { ChatRoomComponent } from './components/chat-room/chat-room.component';
+import { UsuarioChatComponent } from './components/usuario-chat/usuario-chat.component'
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ChatRoomComponent } from './components/chat-room/chat-room.component'
     GameFormComponent,
     GameListComponent,
     ChatListComponent,
-    ChatRoomComponent
+    ChatRoomComponent,
+    UsuarioChatComponent
   ],
   imports: [
     BrowserModule,

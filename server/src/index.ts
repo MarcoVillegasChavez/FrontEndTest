@@ -7,6 +7,7 @@ import { urlencoded } from 'body-parser';
 import chatRoomRoutes from './routes/chatRoomRoutes'
 import chatRoutes from './routes/chatRoutes'
 import usuarioRoutes from './routes/usuarioRoutes'
+import usuarioChatRoutes from './routes/usuariosChatRoutes'
 
 
 class Server{
@@ -28,6 +29,7 @@ class Server{
         this.app.use('/api/ChatRoom', chatRoomRoutes);
         this.app.use('/api/Chat', chatRoutes);
         this.app.use('/api/Usuario', usuarioRoutes);
+        this.app.use('/api/UsuarioChats', usuarioChatRoutes);
     }
     start(): void {
         this.app.listen(this.app.get('port'), () => {

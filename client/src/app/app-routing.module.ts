@@ -7,6 +7,7 @@ import { GameFormComponent } from './components/game-form/game-form.component'
 
 import { ChatListComponent } from './components/chat-list/chat-list.component'
 import { ChatRoomComponent } from './components/chat-room/chat-room.component'
+import { UsuarioChatComponent } from './components/usuario-chat/usuario-chat.component'
 
 
 const routes: Routes = [
@@ -20,8 +21,12 @@ const routes: Routes = [
     component: ChatListComponent
   },
   {
+    path:'ChatRoom',
+    component: ChatListComponent
+  },
+  {
     path:'ChatRoom/add',
-    component: ChatRoomComponent
+    component: UsuarioChatComponent
   }
 ];
 

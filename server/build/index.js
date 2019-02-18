@@ -10,6 +10,7 @@ const body_parser_1 = require("body-parser");
 const chatRoomRoutes_1 = __importDefault(require("./routes/chatRoomRoutes"));
 const chatRoutes_1 = __importDefault(require("./routes/chatRoutes"));
 const usuarioRoutes_1 = __importDefault(require("./routes/usuarioRoutes"));
+const usuariosChatRoutes_1 = __importDefault(require("./routes/usuariosChatRoutes"));
 class Server {
     constructor() {
         this.app = express_1.default();
@@ -27,6 +28,7 @@ class Server {
         this.app.use('/api/ChatRoom', chatRoomRoutes_1.default);
         this.app.use('/api/Chat', chatRoutes_1.default);
         this.app.use('/api/Usuario', usuarioRoutes_1.default);
+        this.app.use('/api/UsuarioChats', usuariosChatRoutes_1.default);
     }
     start() {
         this.app.listen(this.app.get('port'), () => {
