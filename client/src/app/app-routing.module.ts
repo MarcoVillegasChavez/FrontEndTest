@@ -18,6 +18,10 @@ const routes: Routes = [
     component: ChatListComponent
   },
   {
+    path:'ChatList/:id',
+    component: ChatListComponent
+  },
+  {
     path:'ChatRoom/:id',
     component: ChatRoomComponent
   },

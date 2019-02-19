@@ -15,7 +15,8 @@ const database_1 = __importDefault(require("../database"));
 class ChatController {
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const games = yield database_1.default.query('SELECT * FROM Chats');
+            const { id } = req.params;
+            const games = yield database_1.default.query(' SELECT * FROM Chats WHERE idChat = ? ', [id]);
             res.json(games);
             console.log(games);
         });
@@ -23,7 +24,7 @@ class ChatController {
     getOne(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            const games = yield database_1.default.query('SELECT * FROM Chats WHERE idChat = ?', [id]);
+            const games = yield database_1.default.query(' SELECT * FROM Chats WHERE idChat = ? ', [id]);
             if (games.length > 0) {
                 return res.json(games[0]);
             }

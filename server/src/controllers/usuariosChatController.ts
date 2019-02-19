@@ -4,13 +4,14 @@ import pool from '../database';
 class ChatController {
 
     public async list(req: Request, res: Response) {
-        const games = await pool.query('SELECT * FROM UsuariosChats');
+        const {id} = req.params;
+        const games = await pool.query('SELECT * FROM UsuariosChats WHERE idUsuario = ? ', [id]);
         res.json(games);
         console.log(games);
     }
     public async getOne(req: Request, res: Response): Promise<any> {
         const { id } = req.params;
-        const games = await pool.query('SELECT * FROM UsuariosChats WHERE id = ?', [id]);
+        const games = await pool.query('SELECT * FROM UsuariosChats WHERE idUsuarioChat = ?', [id]);
         if (games.length > 0) {
             return res.json(games[0]);
         }

@@ -10,8 +10,8 @@ export class ChatsService {
   API_URI = 'http://localhost:3000/api/'
 
   constructor(private http: HttpClient) { }
-  getChats() {
-    return this.http.get(this.API_URI + 'Chat');
+  getChats(IdChat: string) {
+    return this.http.get(this.API_URI + 'Chat/'+ IdChat);
   }
   getChat(IdChat: string) {
     return this.http.get(this.API_URI + 'Chat/' + IdChat);

@@ -7,7 +7,7 @@ class ChatRoutes  {
         this.config();        
     }
     config(): void {
-        this.router.get('/', chatController.list);
+        this.router.get('/:id', chatController.list);
         this.router.get('/:id', chatController.getOne);
         this.router.post('/', chatController.create);
         this.router.delete('/:id', chatController.delete);

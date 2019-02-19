@@ -31,8 +31,9 @@ export class UsuarioComponent implements OnInit {
     console.log(this.usuario);
     this.usuariosService.authenticateUsuario(this.usuario).subscribe(
       res => {
-        console.log(res);
-        this.router.navigate(['/ChatList/:id', res]);
+        this.usuario = res;
+        localStorage.setItem('usuario', String(this.usuario.IdUsuario));
+        this.router.navigate(['/ChatList/', this.usuario.IdUsuario]);
       },
       err => {
         alert('El usuario es invalido');

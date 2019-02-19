@@ -1,16 +1,15 @@
-<div class="col-md-4" *ngFor="let chat of chats">
+<div class="col-md-4" *ngFor="let usuarioChats of usuariosChats">
   <div class="card text-center">
     <div class="card-header bg-dark text-white d-flex justify-content-between align items center ">
-        {{chat.IdChat}}        
+        {{usuarioChats.IdChat}}        
     </div>
     
     <div class="card-body">
       <p>
-        {{chat.Cliente}}
+        {{usuarioChats.Cliente}}
       </p>
-      <a [routerLink]="['/ChatRoom/', chat.IdChat]" class="btn btn-info btn-block" >
-        {{chat.FechaCreacion}}
-      </a>
+      <a [routerLink]="['/ChatRoom/', usuarioChats.IdChat]" class="btn btn-info btn-block" ></a>
+      
     </div>
 
   </div>

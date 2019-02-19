@@ -9,8 +9,8 @@ export class UsuariosChatsService {
   
   API_URI = 'http://localhost:3000/api/'
   constructor(private http:HttpClient) { }
-  getUsuariosChats(){
-    return this.http.get(this.API_URI + 'UsuarioChats');
+  getUsuariosChats(id:string){
+    return this.http.get(this.API_URI + 'UsuarioChats/' + id );
   }
   getUsuarioChat(id:string){
     return this.http.get(this.API_URI + 'UsuarioChats/' + id);

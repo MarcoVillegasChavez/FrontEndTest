@@ -4,7 +4,8 @@ import pool from '../database';
 class ChatRoomController {
 
     public async list(req: Request, res: Response) {
-        const games = await pool.query('SELECT * FROM ChatRoom');
+        const { id } = req.params;
+        const games = await pool.query('SELECT * FROM ChatRoom WHERE idChat = ? ', [id]);
         res.json(games);
         console.log(games);
     }

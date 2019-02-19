@@ -10,8 +10,8 @@ export class ChatRoomService {
 
   API_URI = 'http://localhost:3000/api/'
   constructor(private http: HttpClient) { }
-  getChatRooms(){
-    return this.http.get(this.API_URI + 'ChatRoom');
+  getChatRooms(id:string|number){
+    return this.http.get(this.API_URI + 'ChatRoom/' + id);
   }
   getChatRoom(id:string){
     return this.http.get(this.API_URI + 'ChatRoom/' + id);

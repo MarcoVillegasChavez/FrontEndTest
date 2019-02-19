@@ -15,7 +15,8 @@ const database_1 = __importDefault(require("../database"));
 class ChatRoomController {
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const games = yield database_1.default.query('SELECT * FROM ChatRoom');
+            const { id } = req.params;
+            const games = yield database_1.default.query('SELECT * FROM ChatRoom WHERE idChat = ? ', [id]);
             res.json(games);
             console.log(games);
         });
