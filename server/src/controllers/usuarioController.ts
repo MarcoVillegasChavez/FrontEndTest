@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import pool from '../database';
+import { promises } from 'fs';
 
 class UsuarioController {
 
@@ -35,6 +36,19 @@ class UsuarioController {
         const { id } = req.params;
         await pool.query('UPDATE Usuarios SET ? WHERE id = ?', [req.body, id]);
         res.json({ message: 'The User was updated' })
+    }
+    public async authenticate(req: Request, res: Response): Promise<void> {
+        try {
+            const authenticateUser = await pool.query('SELECT * FROM Usuarios WHERE Usuario = ? AND pass = ?', [req.body.Usuario, req.body.pass]);
+            if(authenticateUser.length > 0){
+                res.json({ message: 'User Authenticated' });
+            }
+            else{
+                res.status(501).json({ message: 'User Or Password Incorrect' });
+            }
+        } catch (err) {
+            res.status(501).json({ message: err });
+        }
     }
 }
 const usuarioController = new UsuarioController();

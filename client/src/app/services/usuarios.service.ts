@@ -25,4 +25,7 @@ export class UsuariosService {
   updateUsuario(id: string|number, usuario:Usuarios): Observable<Usuarios>{
     return this.http.put(this.API_URI + 'Usuario/' + id, usuario);
   }
+  authenticateUsuario(usuario: Usuarios){
+    return this.http.post(this.API_URI + 'Usuario/AutenticarUsuario', usuario);
+  }
 }

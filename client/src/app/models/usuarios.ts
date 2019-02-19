@@ -1,7 +1,7 @@
 export interface Usuarios{
     IdUsuario?: number;
     Usuario?: string;
-    UltimoAcceso?: DataCue;
+    UltimoAcceso?: Date;
     Imagen?: string;
     pass?:string;
 }

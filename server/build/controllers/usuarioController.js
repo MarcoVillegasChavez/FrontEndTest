@@ -57,6 +57,22 @@ class UsuarioController {
             res.json({ message: 'The User was updated' });
         });
     }
+    authenticate(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                const authenticateUser = yield database_1.default.query('SELECT * FROM Usuarios WHERE Usuario = ? AND pass = ?', [req.body.Usuario, req.body.pass]);
+                if (authenticateUser.length > 0) {
+                    res.json({ message: 'User Authenticated' });
+                }
+                else {
+                    res.status(501).json({ message: 'User Or Password Incorrect' });
+                }
+            }
+            catch (err) {
+                res.status(501).json({ message: err });
+            }
+        });
+    }
 }
 const usuarioController = new UsuarioController();
 exports.default = usuarioController;
