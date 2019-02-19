@@ -39,9 +39,9 @@ class UsuarioController {
     }
     public async authenticate(req: Request, res: Response): Promise<void> {
         try {
-            const authenticateUser = await pool.query('SELECT * FROM Usuarios WHERE Usuario = ? AND pass = ?', [req.body.Usuario, req.body.pass]);
+            const authenticateUser = await pool.query('SELECT IdUsuario FROM Usuarios WHERE Usuario = ? AND pass = ?', [req.body.Usuario, req.body.pass]);
             if(authenticateUser.length > 0){
-                res.json({ message: 'User Authenticated' });
+                res.json(authenticateUser[0]);
             }
             else{
                 res.status(501).json({ message: 'User Or Password Incorrect' });

@@ -60,9 +60,9 @@ class UsuarioController {
     authenticate(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                const authenticateUser = yield database_1.default.query('SELECT * FROM Usuarios WHERE Usuario = ? AND pass = ?', [req.body.Usuario, req.body.pass]);
+                const authenticateUser = yield database_1.default.query('SELECT IdUsuario FROM Usuarios WHERE Usuario = ? AND pass = ?', [req.body.Usuario, req.body.pass]);
                 if (authenticateUser.length > 0) {
-                    res.json({ message: 'User Authenticated' });
+                    res.json(authenticateUser[0]);
                 }
                 else {
                     res.status(501).json({ message: 'User Or Password Incorrect' });

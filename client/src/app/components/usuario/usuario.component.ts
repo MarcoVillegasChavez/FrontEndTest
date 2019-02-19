@@ -32,7 +32,7 @@ export class UsuarioComponent implements OnInit {
     this.usuariosService.authenticateUsuario(this.usuario).subscribe(
       res => {
         console.log(res);
-        this.router.navigate(['/ChatList']);
+        this.router.navigate(['/ChatList/:id', res]);
       },
       err => {
         alert('El usuario es invalido');
