@@ -7,8 +7,8 @@ class UsuariosChatRoutes  {
         this.config();        
     }
     config(): void {
-        this.router.get('/', usuariosChatController.list);
-        this.router.get('/:id', usuariosChatController.getOne);
+        this.router.get('/:id', usuariosChatController.list);
+        this.router.get('/getOne/:id', usuariosChatController.getOne);
         this.router.post('/', usuariosChatController.create);
         this.router.delete('/:id', usuariosChatController.delete);
         this.router.put('/:id', usuariosChatController.update)

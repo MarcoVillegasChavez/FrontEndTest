@@ -11,8 +11,8 @@ class UsuariosChatRoutes {
         this.config();
     }
     config() {
-        this.router.get('/', usuariosChatController_1.default.list);
-        this.router.get('/:id', usuariosChatController_1.default.getOne);
+        this.router.get('/:id', usuariosChatController_1.default.list);
+        this.router.get('/getOne/:id', usuariosChatController_1.default.getOne);
         this.router.post('/', usuariosChatController_1.default.create);
         this.router.delete('/:id', usuariosChatController_1.default.delete);
         this.router.put('/:id', usuariosChatController_1.default.update);
