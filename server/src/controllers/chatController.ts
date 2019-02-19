@@ -10,7 +10,7 @@ class ChatController {
     }
     public async getOne(req: Request, res: Response): Promise<any> {
         const { id } = req.params;
-        const games = await pool.query('SELECT * FROM Chats WHERE id = ?', [id]);
+        const games = await pool.query('SELECT * FROM Chats WHERE idChat = ?', [id]);
         if (games.length > 0) {
             return res.json(games[0]);
         }
@@ -28,12 +28,12 @@ class ChatController {
     }
     public async delete(req: Request, res: Response): Promise<void> {
         const { id } = req.params;
-        await pool.query('DELETE FROM Chats WHERE id = ?', [id]);
+        await pool.query('DELETE FROM Chats WHERE idChat = ?', [id]);
         res.json({ message: 'The Chat was deleted' });
     }
     public async update(req: Request, res: Response): Promise<void> {
         const { id } = req.params;
-        await pool.query('UPDATE Chats SET ? WHERE id = ?', [req.body, id]);
+        await pool.query('UPDATE Chats SET ? WHERE idChat = ?', [req.body, id]);
         res.json({ message: 'The Chat was updated' })
     }
 }

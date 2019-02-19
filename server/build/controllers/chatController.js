@@ -23,7 +23,7 @@ class ChatController {
     getOne(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            const games = yield database_1.default.query('SELECT * FROM Chats WHERE id = ?', [id]);
+            const games = yield database_1.default.query('SELECT * FROM Chats WHERE idChat = ?', [id]);
             if (games.length > 0) {
                 return res.json(games[0]);
             }
@@ -46,14 +46,14 @@ class ChatController {
     delete(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            yield database_1.default.query('DELETE FROM Chats WHERE id = ?', [id]);
+            yield database_1.default.query('DELETE FROM Chats WHERE idChat = ?', [id]);
             res.json({ message: 'The Chat was deleted' });
         });
     }
     update(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            yield database_1.default.query('UPDATE Chats SET ? WHERE id = ?', [req.body, id]);
+            yield database_1.default.query('UPDATE Chats SET ? WHERE idChat = ?', [req.body, id]);
             res.json({ message: 'The Chat was updated' });
         });
     }

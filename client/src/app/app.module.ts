@@ -9,7 +9,8 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { ChatListComponent } from './components/chat-list/chat-list.component';
 import { ChatRoomComponent } from './components/chat-room/chat-room.component';
 import { UsuarioChatComponent } from './components/usuario-chat/usuario-chat.component';
-import { ChatRoomFormComponent } from './components/chat-room-form/chat-room-form.component'
+import { UsuarioComponent } from './components/usuario/usuario.component';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { ChatRoomFormComponent } from './components/chat-room-form/chat-room-for
     ChatListComponent,
     ChatRoomComponent,
     UsuarioChatComponent,
-    ChatRoomFormComponent
+    UsuarioComponent
   ],
   imports: [
     BrowserModule,

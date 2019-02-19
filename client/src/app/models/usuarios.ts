@@ -3,4 +3,5 @@ export interface Usuarios{
     Usuario?: string;
     UltimoAcceso?: DataCue;
     Imagen?: string;
+    pass?:string;
 }

@@ -13,16 +13,16 @@ export class ChatsService {
   getChats() {
     return this.http.get(this.API_URI + 'Chat');
   }
-  getChat(id: string) {
-    return this.http.get(this.API_URI + 'Chat' + id);
+  getChat(IdChat: string) {
+    return this.http.get(this.API_URI + 'Chat/' + IdChat);
   }
   saveChat(chat: Chat) {
     return this.http.post(this.API_URI + 'Chat', chat);
   }
-  deleteChat(id: string) {
-    return this.http.delete(this.API_URI + 'Chat' + id);
+  deleteChat(IdChat: string) {
+    return this.http.delete(this.API_URI + 'Chat/' + IdChat);
   }
-  updateChat(id: string | number, chat: Chat): Observable<Chat> { 
-    return this.http.put(this.API_URI + 'Chat' + id, chat);
+  updateChat(IdChat: string | number, chat: Chat): Observable<Chat> { 
+    return this.http.put(this.API_URI + 'Chat/' + IdChat, chat);
   }
 }

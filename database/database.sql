@@ -34,3 +34,4 @@ CREATE TABLE ChatRoom(
     FOREIGN KEY (IdUsuario) REFERENCES Usuarios(IdUsuario)
 );
  
+ALTER TABLE Usuarios ADD pass Nvarchar(10);

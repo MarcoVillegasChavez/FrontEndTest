@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ChatListComponent } from './components/chat-list/chat-list.component'
 import { ChatRoomComponent } from './components/chat-room/chat-room.component'
 import { UsuarioChatComponent } from './components/usuario-chat/usuario-chat.component'
+import { UsuarioComponent } from './components/usuario/usuario.component'
 
 
 const routes: Routes = [
@@ -23,6 +24,10 @@ const routes: Routes = [
   {
     path:'ChatRoom/add',
     component: UsuarioChatComponent
+  },
+  {
+    path:'Loggin',
+    component: UsuarioComponent
   }
 ];
 
