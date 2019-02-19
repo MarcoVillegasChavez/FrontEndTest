@@ -6,23 +6,19 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
-import { GameFormComponent } from './components/game-form/game-form.component';
-import { GameListComponent } from './components/game-list/game-list.component';
-
-import { GamesService } from './services/games.service';
 import { ChatListComponent } from './components/chat-list/chat-list.component';
 import { ChatRoomComponent } from './components/chat-room/chat-room.component';
-import { UsuarioChatComponent } from './components/usuario-chat/usuario-chat.component'
+import { UsuarioChatComponent } from './components/usuario-chat/usuario-chat.component';
+import { ChatRoomFormComponent } from './components/chat-room-form/chat-room-form.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
-    GameFormComponent,
-    GameListComponent,
     ChatListComponent,
     ChatRoomComponent,
-    UsuarioChatComponent
+    UsuarioChatComponent,
+    ChatRoomFormComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +27,7 @@ import { UsuarioChatComponent } from './components/usuario-chat/usuario-chat.com
     FormsModule
   ],
   providers: [
-    GamesService
+
   ],
   bootstrap: [AppComponent]
 })

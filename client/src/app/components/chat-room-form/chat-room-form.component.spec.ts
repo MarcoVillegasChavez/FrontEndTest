@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GameFormComponent } from './game-form.component';
+import { ChatRoomFormComponent } from './chat-room-form.component';
 
-describe('GameFormComponent', () => {
-  let component: GameFormComponent;
-  let fixture: ComponentFixture<GameFormComponent>;
+describe('ChatRoomFormComponent', () => {
+  let component: ChatRoomFormComponent;
+  let fixture: ComponentFixture<ChatRoomFormComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GameFormComponent ]
+      declarations: [ ChatRoomFormComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GameFormComponent);
+    fixture = TestBed.createComponent(ChatRoomFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,12 +1,22 @@
-<div class="col-md-4" >
+<div class="col-md-4" *ngFor="let chatRoom of chatsRoom">
   <div class="card text-center">
     <div class="card-header bg-dark text-white d-flex justify-content-between align items center ">
-     
+     {{chatRoom.IdUsuario}}
       <button class="btn btn-danger" >
         <i class="far fa-trash-alt"></i>
       </button>
     </div>
-  
+  <div class="card-body">
+    <p>
+      {{chatRoom.Comentario}}
+    </p>
+    <p>
+      {{chatRoom.fecha}}
+    </p>
+  </div>
  
   </div>
+</div>
+<div>
+  <app-chat-room-form></app-chat-room-form>
 </div>
