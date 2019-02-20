@@ -1,7 +1,7 @@
-<div class="col-md-8" *ngFor="let chatRoom of chatsRoom">
+<div class="col-md-12" *ngFor="let chatRoom of chatsRoom">
   <div class="card text-center">
     <div class="card-header bg-dark text-white d-flex justify-content-between align items center ">
-        {{chatRoom.IdChatRoom}} - {{chatRoom.IdUsuario}}
+        #Comentario: {{chatRoom.IdChatRoom}} - Usuario: {{chatRoom.IdUsuario}}
       <button class="btn btn-danger" (click)="deleteComment(chatRoom.IdChatRoom)" >
         <i class="far fa-trash-alt"></i>
       </button>

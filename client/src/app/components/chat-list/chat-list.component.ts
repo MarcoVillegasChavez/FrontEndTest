@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
 import { UsuariosChatsService } from '../../services/usuarios-chats.service'
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -8,7 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./chat-list.component.css']
 })
 export class ChatListComponent implements OnInit {
-  
+  @HostBinding('class') classes = 'row'
   usuarios : any = [];
   
   constructor(private usuariosChatsService: UsuariosChatsService, private router: Router, private activatedRoute: ActivatedRoute) { }

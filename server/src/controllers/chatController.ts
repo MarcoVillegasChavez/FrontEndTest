@@ -4,18 +4,16 @@ import pool from '../database';
 class ChatController {
 
     public async list(req: Request, res: Response) {
-        const {id} = req.params;
+        const { id } = req.params;
         const games = await pool.query(' SELECT * FROM Chats WHERE idChat = ? ', [id]);
         res.json(games);
         console.log(games);
     }
-    public async getOne(req: Request, res: Response): Promise<any> {
-        const { id } = req.params;
-        const games = await pool.query(' SELECT * FROM Chats WHERE idChat = ? ', [id]);
+    public async getOne(req: Request, res: Response) {
+        const games = await pool.query('SELECT IdChat FROM Chats ORDER BY IdChat DESC  LIMIT 1;');
         if (games.length > 0) {
             return res.json(games[0]);
         }
-        res.status(404).json({ text: "The Chat doesn't exists" });
     }
     public async create(req: Request, res: Response): Promise<void> {
         try {

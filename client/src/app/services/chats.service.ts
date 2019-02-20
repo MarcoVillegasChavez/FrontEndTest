@@ -13,8 +13,8 @@ export class ChatsService {
   getChats(IdChat: string) {
     return this.http.get(this.API_URI + 'Chat/'+ IdChat);
   }
-  getChat(IdChat: string) {
-    return this.http.get(this.API_URI + 'Chat/' + IdChat);
+  getChat() {
+    return this.http.get(this.API_URI + 'Chat');
   }
   saveChat(chat: Chat) {
     return this.http.post(this.API_URI + 'Chat', chat);

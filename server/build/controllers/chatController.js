@@ -23,12 +23,10 @@ class ChatController {
     }
     getOne(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { id } = req.params;
-            const games = yield database_1.default.query(' SELECT * FROM Chats WHERE idChat = ? ', [id]);
+            const games = yield database_1.default.query('SELECT IdChat FROM Chats ORDER BY IdChat DESC  LIMIT 1;');
             if (games.length > 0) {
                 return res.json(games[0]);
             }
-            res.status(404).json({ text: "The Chat doesn't exists" });
         });
     }
     create(req, res) {

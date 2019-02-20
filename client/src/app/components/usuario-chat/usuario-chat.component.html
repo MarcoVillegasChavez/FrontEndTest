@@ -1,3 +1,15 @@
-<p>
-  Creacion de nuevo Chat
-</p>
+<div class="col-md-4" *ngFor="let usuario of usuarios">
+  <div class="card text-center">
+    <div class="card-header bg-secondary text-white d-flex justify-content-between align items center ">
+      {{usuario.IdUsuario}} - {{usuario.Usuario}}
+    </div>
+    <img [src]="usuario.Imagen" class="card-img-top">
+  <div  class="card-body">
+      <p>        
+        <a class="btn btn-info btn-block text-white" (click)="newChat(usuario.IdUsuario)" >
+         New Chat
+        </a>
+      </p>
+    </div>
+  </div>
+</div>
