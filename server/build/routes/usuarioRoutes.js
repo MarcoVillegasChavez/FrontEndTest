@@ -16,6 +16,7 @@ class UsuarioRoutes {
         this.router.post('/', usuarioController_1.default.create);
         this.router.delete('/:id', usuarioController_1.default.delete);
         this.router.put('/:id', usuarioController_1.default.update);
+        //Esta ruta permite la autenticacion del usuario.
         this.router.post('/AutenticarUsuario', usuarioController_1.default.authenticate);
     }
 }

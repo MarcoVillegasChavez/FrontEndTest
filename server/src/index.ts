@@ -13,11 +13,15 @@ import usuarioChatRoutes from './routes/usuariosChatRoutes'
 class Server{
     public app: Application;
     constructor(){
+        //Se inicializa expres para acceder a las rutas
         this.app = express();
         this.config();
         this.routes();
     }
+    //Se declara el uso de morgan, cors y las respuestas json, 
+    //   tambien se declara urlencoded, por si se llegara a utilizar algun formulario
     config(): void {
+        //se configura el puerto
         this.app.set('port', process.env.port || 3000);
         this.app.use(morgan('dev'));
         this.app.use(cors());
@@ -25,12 +29,13 @@ class Server{
         this.app.use(urlencoded({extended: false}));
     }
     routes(): void {
-        
+        //Se declaran todas las rutas que se van a utilizar
         this.app.use('/api/ChatRoom', chatRoomRoutes);
         this.app.use('/api/Chat', chatRoutes);
         this.app.use('/api/Usuario', usuarioRoutes);
         this.app.use('/api/UsuarioChats', usuarioChatRoutes);
     }
+    //Se inicializa el servidor.
     start(): void {
         this.app.listen(this.app.get('port'), () => {
             console.log('Server on port ', this.app.get('port'))

@@ -40,14 +40,14 @@ export class ChatRoomComponent implements OnInit {
     if (idUsuario == null){
       this.router.navigate(['/Loggin']);
     }
-
+    //Se mandan a llamar los comentarios de la tabal chatroom por id de chat
     const params = this.activatedRoute.snapshot.params;
     this.IdChat = params.id;
     this.getChat(this.IdChat);
     this.getChatsRoom(this.IdChat);
   };
   getChat(IdChat: string) {
-    this.chatsService.getChat(IdChat).subscribe(
+    this.chatsService.getChats(IdChat).subscribe(
       res => {
         this.chats = res;
       },
@@ -63,6 +63,7 @@ export class ChatRoomComponent implements OnInit {
       err => console.log(err)
     );
   }
+  //Se guarda un nuevo comentario en la tabla chat room 
   saveNewComment() {
     delete this.chatRoom.IdChatRoom;
     delete this.chatRoom.Fecha;
